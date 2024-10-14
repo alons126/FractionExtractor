@@ -7,10 +7,10 @@ def extract_integer_from_file(filepath):
         for line in file:
             # Search for the line that starts with the desired string
             if line.startswith("#(events) w/ exactly 1e:"):
-                # Extract the integer using regex
-                match = re.search(r'\d+', line)
+                # Use a regex to capture the integer after any whitespace
+                match = re.search(r'#\(events\) w/ exactly 1e:\s+(\d+)', line)
                 if match:
-                    return int(match.group())  # Return the integer value
+                    return int(match.group(1))  # Return the captured integer
     return None  # Return None if the line was not found
 
 def process_directories(base_directory):
