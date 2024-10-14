@@ -1,5 +1,6 @@
 import os
 import re
+import csv
 
 def extract_integer_from_file(filepath):
     # Open the file and read its contents
@@ -27,10 +28,19 @@ def process_directories(base_directory):
     # Sort results by filename
     results.sort(key=lambda x: x[0])
 
-    # Print the sorted results
-    for file, integer_value in results:
-        print(f"File: {file}, Integer: {integer_value}")
+    # Define the output CSV file path
+    output_csv = os.path.join(base_directory, "extracted_data.csv")
 
+    # Save the results into a CSV file
+    with open(output_csv, mode='w', newline='') as csv_file:
+        csv_writer = csv.writer(csv_file)
+        # Write the header
+        csv_writer.writerow(['File Name', 'Integer'])
+        # Write the data
+        for file, integer_value in results:
+            csv_writer.writerow([file, integer_value])
+
+    print(f"Data has been saved to {output_csv}")
 
 # Example usage
 base_directory = "/Users/alon/Downloads/Ar40_simulation_SuSa_Q2_6GeV_S01ACwoChi2_ChainRunV5_R2"  # Change this to your base directory path
