@@ -40,7 +40,11 @@ def process_directories(base_directory):
         for file, integer_value in results:
             csv_writer.writerow([file, integer_value])
 
-    print(f"Data has been saved to {output_csv}")
+    # Print the sorted results
+    for file, integer_value in results:
+        print(f"File: {file}, Integer: {integer_value}")
+
+    print(f"\nData has been saved to {output_csv}")
 
 # Example usage
 base_directory = "/Users/alon/Downloads/Ar40_simulation_SuSa_Q2_6GeV_S01ACwoChi2_ChainRunV5_R2"  # Change this to your base directory path
