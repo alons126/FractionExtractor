@@ -47,7 +47,8 @@ def process_directories(base_directory):
     print(f"\nData has been saved to {output_csv}")
 
 # Example usage
-base_directory = "/Users/alon/Downloads/C12_simulation_G18_Q2_4GeV_S01ACwoChi2_ChainRunV5_R2"  # Change this to your base directory path
+# base_directory = "/Users/alon/Downloads/C12_simulation_G18_Q2_4GeV_S01ACwoChi2_ChainRunV5_R2"  # Change this to your base directory path
 # base_directory = "/Users/alon/Downloads/C12_simulation_SuSa_Q2_4GeV_S01ACwoChi2_ChainRunV5_R2"  # Change this to your base directory path
+base_directory = "/Users/alon/Downloads/Ar40_simulation_G18_Q2_6GeV_S01ACwoChi2_ChainRunV5_R2"  # Change this to your base directory path
 # base_directory = "/Users/alon/Downloads/Ar40_simulation_SuSa_Q2_6GeV_S01ACwoChi2_ChainRunV5_R2"  # Change this to your base directory path
 process_directories(base_directory)
